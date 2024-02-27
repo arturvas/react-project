@@ -1,19 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../Profile/profile.css";
 
 const Formulary = () => {
   // useState = return the value and also a function to change it.
-  let [subjectA, setSubjectA] = useState(0);
-  let [subjectB, setSubjectB] = useState(0);
-  let [subjectC, setSubjectC] = useState(0);
-  let [name, setName] = useState("");
+  const [subjectA, setSubjectA] = useState(0);
+  const [subjectB, setSubjectB] = useState(0);
+  const [subjectC, setSubjectC] = useState(0);
+  const [name, setName] = useState("");
+
+  useEffect(() => {
+    console.log("The component has inicialized");
+  }, []);
+
+  // useEffect = every time when State changes, this will be executed.
+  // It can be conditioned with array [] (called dependencies).
+  // If present, activates only if the values in the list change.
+  useEffect(() => {
+    console.log("The name state has changed to " + name);
+  }, [name]);
+
+  useEffect(() => {
+    console.log("The Subject has changed to: " + subjectA);
+    console.log("The Subject has changed to: " + subjectB);
+    console.log("The Subject has changed to: " + subjectC);
+  }, [subjectA, subjectB, subjectC]);
 
   const nameChange = (e) => {
     // console.log(e.target.value);
-    // setName(evento.target.value);
+    // setName(e.target.value);
     setName((previousState) => {
-      console.log(previousState);
-
+      // console.log(previousState);
       return e.target.value;
     });
   };
@@ -25,7 +41,7 @@ const Formulary = () => {
     if (average >= 7) {
       return <p>{name}, you has been approved.</p>;
     } else if (average === 0) {
-      return <p>Enter your note.</p>;
+      return <p>Please, enter your note.</p>;
     } else {
       return <p>{name}, you weren't approved.</p>;
     }
