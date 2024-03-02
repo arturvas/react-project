@@ -13,8 +13,7 @@ function App() {
   return (
     <>
       <Profile
-        name="Artur Vasconcelos"
-        address="https://github.com/arturvas.png"
+        userName={"arturvas"}
         toggleFormVisibility={toggleFormVisibility}
       />
       <ReposList />
