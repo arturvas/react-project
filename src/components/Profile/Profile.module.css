@@ -1,19 +1,21 @@
 .header {
-  background-color: brown;
+  background-color: var(--mainColor);
   display: flex;
   flex-direction: column;
-  color: white;
+  color: var(--secondColor);
   align-items: center;
   padding: 180px 0 40px;
+  margin-bottom: 80px;
 }
 
 .avatar {
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  border: 2px solid white;
+  border: 2px solid var(--secondColor);
 }
 
 .name {
   font-size: 18px;
+  color: var(--secondColor);
 }
