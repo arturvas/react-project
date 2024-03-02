@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "../Profile/profile.css";
 
 const Formulary = () => {
   // useState = return the value and also a function to change it.
