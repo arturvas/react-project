@@ -26,10 +26,7 @@ const Formulary = () => {
   }, [subjectA, subjectB, subjectC]);
 
   const nameChange = (e) => {
-    // console.log(e.target.value);
-    // setName(e.target.value);
     setName((previousState) => {
-      // console.log(previousState);
       return e.target.value;
     });
   };
@@ -46,6 +43,13 @@ const Formulary = () => {
       return <p>{name}, you weren't approved.</p>;
     }
   };
+
+  //   <ul>
+  //      {/* map = does the return of each item */}
+  //        {[1, 2, 3, 4, 5].map((item) => (
+  //        <li key={item}>{item}</li>
+  //      ))}
+  //   </ul>
 
   return (
     <div className="container">
