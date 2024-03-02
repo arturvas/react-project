@@ -1,0 +1,19 @@
+.header {
+  background-color: brown;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  padding: 180px 0 40px;
+}
+
+.avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.name {
+  font-size: 18px;
+}
