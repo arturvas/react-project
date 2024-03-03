@@ -1,26 +1,21 @@
 import { useState } from "react";
 import Profile from "./components/Profile";
-import Formulary from "./components/Formulary";
+// import Formulary from "./components/Formulary";
 import ReposList from "./components/ReposList";
 
 function App() {
-  const [formIsVisible, setFormIsVisible] = useState(true);
-
-  const toggleFormVisibility = () => {
-    setFormIsVisible(!formIsVisible);
-  };
+  const [userName, setUserName] = useState("");
 
   return (
     <>
-      <Profile
-        userName={"arturvas"}
-        toggleFormVisibility={toggleFormVisibility}
-      />
-      <ReposList />
-      {/* <button onClick={() => setFormIsVisible(!formIsVisible)} type="button">
-        Toggle form
-      </button> */}
-      {formIsVisible && <Formulary />}
+      <input type="text" onBlur={(e) => setUserName(e.target.value)} />
+      {userName.length > 4 && (
+        <>
+          <Profile userName={userName} />
+          <ReposList userName={userName} />
+        </>
+      )}
+      {/* <Formulary /> */}
     </>
   );
 }
